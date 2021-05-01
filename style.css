@@ -1,9 +1,303 @@
+/*################# SIDE_BAR ##################*/
+
+
 body{
-    background-color: aliceblue;
+    font-family:calibri;
+}
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.side-bar{
+    position:fixed;
+    left: 0px;
+    width:280px;
+    height: 100%;
+    background: #042331;
+    transition:all .5s ease;
+}
+.side-bar .username{
+    
+    line-height: 1rem;
+    text-align: center;
+    background: #063146;
+    user-select: none;
+    display:flex;
+    padding:1px;
+   
+   
+}
+.side-bar .username .name{
+    font-size: 20px;
+    color:aliceblue;
+    line-height:1rem;
+    margin-top:1.5rem;
+    line-height:1.5rem;
+    font-family: calibri;
+    margin-bottom:1rem;
+}
+/*#### button ######*/
+.add_task{
+    margin-top:2rem;
+    width:200px;
+    height:45px;
+    margin-left:-3.6rem;
+    font-size: 18px;
+    border-style: none;
+    border-radius: 40px;
+    box-shadow: 10px 10px 8px rgba(13, 66, 66, 0.5);
+    background-color:rgb(174, 217, 253)
+}
+/*#### button ######*/
+img {
+    width:20%;
+    height:80%;
+    margin-top:0.9rem;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    margin-bottom:1rem;
+    margin-left:1.5rem;
+}
+.side-bar ul a{
+    display:block;
+    height:100%;
+    width:100%;
+    line-height: 65px;
+    font-size: 20px;
+    color:white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top:1px solid rgba(255, 255, 255, .1);
+    border-bottom:1px solid black;
+    transition:.4s;
+    
+}
+.side-bar ul {
+    overflow-y: scroll;
+}
+
+
+
+.side-bar ul a i{
+    margin-right: 16px;
+}
+
+ul li:hover a{
+   padding-left:60px;
+}
+ 
+
+/*############ animation #######
+
+#check{
+    display:none;
+}
+label #btn,label #cancel{
+    position:absolute;
+    cursor :pointer;
+    background: #042331;
+    border-radius: 3px;
+}
+label #btn{
+    left: 40px;
+    top: 25px;
+    font-size:35px;
+    color :white;
+    padding:6px 12px;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -225px;
+    top: 17px;
+    font-size: 30px;
+    color :#0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .side-bar{
+    left:0;
+}
+
+#check:checked ~ label #cancel{
+    left: 225px;
+    
+}
+
+section {
+    background-image:url(ToDo_1.png);
+    background-position:center;
+    background-size:cover;
+    height:100vh;
+    margin-top: -10rem;
+    transition:all .5s;
+}
+
+#check:checked ~ section{
+    margin-left:250px;
+}
+/*##############################*/
+
+section {
+    background-image:url(ToDo_1.png);
+    background-position:center;
+    background-size:cover;
+    height:100vh;
+    margin-top: -10rem;
+    transition:all .5s;
+}
+
+.title h1{
+    margin-left:26rem;
+    padding:2rem;
+}
+
+/*.tool-box{
+    margin-left:25rem;
+    display:inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 10rem;
+    width:230px;
+    height:35px;
+    padding:0.3rem;
+    background-color: black;
+    margin-left:95%;
+    margin-top:2rem;
 
 }
-.intro{
+/*.premium{
+    margin-left:25rem;
+    display:inline-flex;
+    align-items: center;
+    justify-content:center;
+    border-radius: 10rem;
+    width:200px;
+    height:35px;
+    padding:0.3rem;
     background-color: black;
-    height: 50px;
-    width: 50px;
+    margin-left:80%;
+    margin-bottom:90%;
+    margin-top: -10rem;
+    
+}*/
+
+/*.tool-box h3{
+    display:inline-flex;
+    align-items: center;
+    justify-content:center;
+    color:white;
+    padding-right:3rem;
 }
+
+
+header .tool-bar{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    column-gap: 0px;
+    text-align: right;   
+}*/
+
+.wish-bar .wish{
+    margin-left:25rem;
+    display:inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 10rem;
+    width:400px;
+    height:35px;
+    padding:0.3rem;
+    background-color: #042331;
+    margin-left:20%;
+    margin-top:-10rem;
+    
+
+}
+.wish h3{
+    color:white;
+    align-items:flex-start;
+    display:inline-flex;
+    justify-content:flex-start;
+    font-weight:lighter;
+    margin-right:7rem;
+
+}
+
+.card{
+    
+    display:inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 10rem;
+    width:230px;
+    height:35px;
+    padding:0.3rem;
+    background-color: #042331;
+
+}
+.card h3{
+    color:white;
+    display:inline-flex;
+    align-items: center;
+    justify-content:center;
+    font-weight:lighter;
+    padding-right:3rem;
+    font-size:23px;
+}
+
+.box {
+    margin-bottom:4rem;
+    padding-top:1.3rem;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-column-gap:3rem;
+    margin-left:65%; 
+    
+}
+
+/*########### TASK_PAGE ############*/
+
+.task{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-column-gap:3rem;
+    margin-left:14%;
+    position: fixed;
+}
+.task-page{
+    margin-left:20%; 
+    margin-top:-35rem; 
+    width:400px;
+    height:500px;
+    background-color:white;
+    border-radius:5%;
+    
+}
+.task-page h3{
+        display:block;
+        font-family:calibri;
+        height:65px;
+        width:400px;
+        line-height: 1rem;
+        font-size: 20px;
+        color:black;
+        padding-left: 20px;
+        padding-top: 25px;
+        box-sizing: border-box;
+        border-top:none;
+        box-shadow: 2px 2px 3px rgba(183, 202, 202, 0.5);
+        
+        transition:.4s;
+    }
+    
+.box .card a i{
+    color:white;
+    font-size:25px;
+    padding:1rem;
+    
+}
+
