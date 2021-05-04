@@ -3,6 +3,10 @@
 
 body{
     font-family:calibri;
+    background-image:url(./Images/ToDo_1\ -\ Copy.png);
+    background-position:center;
+    height:100vh;
+    background-size: cover;
 }
 *{
     margin:0;
@@ -72,15 +76,8 @@ img {
     box-sizing: border-box;
     border-top:1px solid rgba(255, 255, 255, .1);
     border-bottom:1px solid black;
-    transition:.4s;
-    
+    transition:.4s; 
 }
-/* scroll bar removed
-.side-bar ul {
-    overflow-y: scroll;
-}*/
-
-
 
 .side-bar ul a i{
     margin-right: 16px;
@@ -90,121 +87,14 @@ ul li:hover a{
    padding-left:60px;
 }
  
-
-/*############ animation #######
-
-#check{
-    display:none;
-}
-label #btn,label #cancel{
-    position:absolute;
-    cursor :pointer;
-    background: #042331;
-    border-radius: 3px;
-}
-label #btn{
-    left: 40px;
-    top: 25px;
-    font-size:35px;
-    color :white;
-    padding:6px 12px;
-}
-
-label #cancel{
-    z-index: 1111;
-    left: -225px;
-    top: 17px;
-    font-size: 30px;
-    color :#0a5275;
-    padding: 4px 9px;
-    transition: all .5s ease;
-}
-
-#check:checked ~ .side-bar{
-    left:0;
-}
-
-#check:checked ~ label #cancel{
-    left: 225px;
-    
-}
-
-section {
-    background-image:url(ToDo_1.png);
-    background-position:center;
-    background-size:cover;
-    height:100vh;
-    margin-top: -10rem;
-    transition:all .5s;
-}
-
-#check:checked ~ section{
-    margin-left:250px;
-}
-/*##############################*/
-
-section {
-    background-image:url(./Images/ToDo_1\ -\ Copy.png);
-    background-position:center;
-    background-size:cover;
-    height:100vh;
-    margin-top: -10rem;
-    transition:all .5s;
-}
-
 .title h1{
     margin-left:26rem;
     padding:2rem;
 }
 
-/*.tool-box{
-    margin-left:25rem;
-    display:inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    border-radius: 10rem;
-    width:230px;
-    height:35px;
-    padding:0.3rem;
-    background-color: black;
-    margin-left:95%;
-    margin-top:2rem;
 
-}
-/*.premium{
-    margin-left:25rem;
-    display:inline-flex;
-    align-items: center;
-    justify-content:center;
-    border-radius: 10rem;
-    width:200px;
-    height:35px;
-    padding:0.3rem;
-    background-color: black;
-    margin-left:80%;
-    margin-bottom:90%;
-    margin-top: -10rem;
-    
-}*/
-
-/*.tool-box h3{
-    display:inline-flex;
-    align-items: center;
-    justify-content:center;
-    color:white;
-    padding-right:3rem;
-}
-
-
-header .tool-bar{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    column-gap: 0px;
-    text-align: right;   
-}*/
-
-.wish-bar .wish{
-    margin-left:25rem;
+.wish-bar{
+    margin-left:0;
     display:inline-flex;
     align-items: center;
     justify-content: flex-end;
@@ -218,7 +108,7 @@ header .tool-bar{
     
 
 }
-.wish h3{
+.wish-bar h3{
     color:white;
     align-items:flex-start;
     display:inline-flex;
@@ -227,19 +117,53 @@ header .tool-bar{
     margin-right:7rem;
 
 }
+.box {
+    margin-bottom:4rem;
+    padding-top:1.3rem;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-column-gap:3rem;
+    margin-left:70%; 
+    justify-content: center;
+}
 
 .card{
-    
-    display:inline-flex;
+
+    display:flex;
     align-items: center;
-    justify-content: flex-end;
-    border-radius: 10rem;
-    width:230px;
-    height:35px;
+    justify-content: center;
+    border-radius: 100px;
+    width:224px;
+    height:37px;
     padding:0.3rem;
     background-color: #042331;
-
+    font-size: 20px;
 }
+
+.box .card a i{
+    font-size: 23px;
+    /* font-weight: 600; */
+    color: blanchedalmond;
+    height: 22px;
+    width: 24px;
+    padding: 14px;
+}
+
+.logoutBtn button{
+    font-size: larger;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 37px;
+    background-color: #042331;
+    border-radius: 100px;
+    left: 50%;
+    display: flex;
+    height: 40px;
+    border: none;
+}
+
 .card h3{
     color:white;
     display:inline-flex;
@@ -250,55 +174,68 @@ header .tool-bar{
     font-size:23px;
 }
 
-.box {
-    margin-bottom:4rem;
-    padding-top:1.3rem;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    grid-column-gap:3rem;
-    margin-left:65%; 
-    
-}
 
 /*########### TASK_PAGE ############*/
 
 .task{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    grid-column-gap:3rem;
+    /* grid-column-gap:3rem; */
     margin-left:14%;
+    margin-top: 40px;
     position: fixed;
 }
 .task-page{
-    margin-left:20%; 
-    margin-top:-35rem; 
+    margin-left: 100px; 
     width:400px;
     height:500px;
     background-color:white;
     border-radius:5%;
     
 }
+.task-page .block{
+    height:65px;
+    width:400px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 25px;
+    box-sizing: border-box;
+    border-top:none;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
 .task-page h3{
-        display:block;
-        font-family:calibri;
-        height:65px;
-        width:400px;
-        line-height: 1rem;
-        font-size: 20px;
-        color:black;
-        padding-left: 20px;
-        padding-top: 25px;
-        box-sizing: border-box;
-        border-top:none;
-        box-shadow: 2px 2px 3px rgba(183, 202, 202, 0.5);
-        
-        transition:.4s;
-    }
+    display:block;
+    font-family:"Helvetica";
+    align-items: center;
+    line-height: 2rem;
+    font-size: 19px;
+    color:black;
+    border-radius: 100px;
+    width: 30%;
+    cursor: pointer;
+}
+/* PK: Inserted today,someday... within division with class block*/
+
     
-.box .card a i{
-    color:white;
-    font-size:25px;
-    padding:1rem;
-    
+/* *************Profile************** */
+.profile center{
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
+.profile center img{
+    height: 100px;
+    width: 100px;
+    margin: 12px;
+    border-radius: 100px;
+}
+.profile center h4{
+    color: #fff;
+    margin-top: 0;
+    font-family: "Helvetica";
+    font-size: 17px;
+    font-weight: 600;
+}
+/* removed section 
+bg image added to body
