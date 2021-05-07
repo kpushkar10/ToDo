@@ -161,22 +161,23 @@ ul li:hover a{
 
     display:flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     border-radius: 100px;
-    width:224px;
-    height:37px;
-    padding:0.3rem;
+    width:220px;
+    height:40px;
     background-color: #042331;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .box .card a i{
-    font-size: 23px;
+    font-size: 24px;
     /* font-weight: 600; */
     color: blanchedalmond;
-    height: 22px;
-    width: 24px;
-    padding: 14px;
+    height: 20px;
+    width: 20px;
+    padding: 1.5rem ;
+    display: flex;
+    align-items: center;
 }
 
 .logoutBtn button{
@@ -185,7 +186,7 @@ ul li:hover a{
     justify-content: center;
     align-items: center;
     width: 120px;
-    height: 37px;
+    height: 40px;
     background-color: #042331;
     border-radius: 100px;
     left: 50%;
@@ -267,9 +268,7 @@ ul li:hover a{
     font-size: 17px;
     font-weight: 600;
 }
-/* 
-CALENDER CSS - Ankur
-*/
+/*           CALENDER CSS - Ankur       */
 .calendar {
     height: 500px;
     width: 400px;
