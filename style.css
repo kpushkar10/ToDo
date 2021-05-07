@@ -22,6 +22,11 @@ CAlender - Ankur
     --bg-second: var(--light-second);
     --color-hover: var(--light-hover);
     --color-txt: var(--light-text);
+    
+    width:400px;
+    height:500px;
+    background-color:white;
+    border-radius:5%;
 }
 /* calender */
 
@@ -266,11 +271,11 @@ ul li:hover a{
 CALENDER CSS - Ankur
 */
 .calendar {
-    height: max-content;
-    width: max-content;
+    height: 500px;
+    width: 400px;
     background-color: var(--bg-main);
-    border-radius: 30px;
-    padding: 20px;
+    border-radius: 5%;
+    padding: 20px; 
     position: relative;
     overflow: hidden;
     /* transform: scale(1.25); */
