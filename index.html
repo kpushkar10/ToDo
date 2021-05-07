@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do Application</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" ></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-<body>        
-        <!---------------------------------animation---------------------
+
+<body>
+    <!---------------------------------animation---------------------
         <input type = "checkbox" id = "check">
         <label for = "check">
             <i class = "fas fa-bars" id = "btn"></i>
@@ -17,14 +19,14 @@
         </label>
         ----------------------------------------------------------------->
 
-    <div class="side-bar">  
-        <header> 
-        <div class="profile">
-            <center>
-                <img src="/Images/profile-icon-image.png" alt="profile-icon">
-                <h4>Username</h4>
-            </center>  
-        </div>
+    <div class="side-bar">
+        <header>
+            <div class="profile">
+                <center>
+                    <img src="/Images/profile-icon-image.png" alt="profile-icon">
+                    <h4>Username</h4>
+                </center>
+            </div>
         </header>
         <!-- Pk: changed profile view -->
         <ul>
@@ -33,12 +35,12 @@
             <li><a href="#"><i class="fas fa-link"></i>SHORTCUT</a></li>
             <li><a href="#"><i class="fa fa-list"></i>Lists</a></li>
             <li><a href="#"><i class="fa fa-tags"></i>Tags</a></li>
-        </ul> 
-           
+        </ul>
+
 
     </div>
 
-<!--<div class="tool-bar">
+    <!--<div class="tool-bar">
   <div class="tool-box">
     <img class="image" src="setting-removebg-preview.png" alt="">
     <img class="image" src="last_sync-removebg-preview.png" alt="">
@@ -52,43 +54,75 @@
 </div>
 -->
 
-<div class="box">
-    <div class="card">
-      <a href="#"><i class="fas fa-cog fa-10x"></i></a>
-      <a href="#"><i class="fas fa-sync-alt fa-sm"></i></a>
-      <a href="#"><i class="far fa-bell fa-sm"></i></a>
-      <a href="#"><i class="fa fa-search fa-sm" ></i></a>
+    <div class="box">
+        <div class="card">
+            <a href="#"><i class="fas fa-cog fa-10x"></i></a>
+            <a href="#"><i class="fas fa-sync-alt fa-sm"></i></a>
+            <a href="#"><i class="far fa-bell fa-sm"></i></a>
+            <a href="#"><i class="fa fa-search fa-sm"></i></a>
+        </div>
+        <!-- PK: changed icon and arranged them as wanted  -->
+
+        <div class="logoutBtn">
+            <button>Logout</button>
+        </div>
     </div>
-    <!-- PK: changed icon and arranged them as wanted  -->
 
-    <div class="logoutBtn">
-        <button>Logout</button>
+
+
+    <div class="wish-bar">
+        <h3>Good Evening, Username...</h3>
     </div>
-</div>
 
-
- 
-<div class="wish-bar">
-      <h3>Good Evening, Username...</h3>
-</div>
-
-<!-- <section> 
-    
-</section> -->
-
-<div class="task">
-    <div class="task-page">
-     <div class="block"><h3>Today</h3></div>
-     <div class="block"><h3>Tommorow</h3></div>
-     <div class="block"><h3>Upcomming</h3></div>
-     <div class="block"><h3>Someday</h3></div>   
+    <div class="task">
+        <div class="task-page">
+            <div class="block">
+                <h3>Today</h3>
+            </div>
+            <div class="block">
+                <h3>Tommorow</h3>
+            </div>
+            <div class="block">
+                <h3>Upcomming</h3>
+            </div>
+            <div class="block">
+                <h3>Someday</h3>
+            </div>
+        </div>
+        <!-- calendar code -->
+        <div class="task-page">
+            <div class="light">
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <span class="month-picker" id="month-picker">February</span>
+                        <div class="year-picker">
+                            <span class="year-change" id="prev-year">
+                                <pre><</pre>
+                            </span>
+                            <span id="year">2021</span>
+                            <span class="year-change" id="next-year">
+                                <pre>></pre>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="calendar-body">
+                        <div class="calendar-week-day">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                    <div class="month-list"></div>
+                </div>
+            </div>
+        </div>
     </div>
-<div class="task-page">
-<!-- inserted h3 in a division -->
-
-
-</div>
-
-</div>
+    <script src="./script.js"></script>
 </body>
+
 </html>
