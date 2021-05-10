@@ -1,3 +1,76 @@
+
+/* PK:adding and deleting task */
+//Selectors
+const todoInput = document.querySelector('.taskInput');
+const todoButton = document.querySelector('.todoButton');
+const todoList = document.querySelector('.todoList');
+
+//Event listeners
+todoButton.addEventListener("click",addTodo);
+todoList.addEventListener("click",deleteCheck);
+
+
+//functions
+function addTodo(event){
+    event.preventDefault(); //prevent from submitting
+    //Todo Div
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+    //Create LI
+    const newTodo = document.createElement("li");
+    newTodo.innerText = todoInput.value;
+
+    newTodo.classList.add("todoItem");
+    todoDiv.appendChild(newTodo);
+    
+    //Check mark button
+    const completedButton = document.createElement('button');
+    completedButton.innerHTML = '<i class="fas fa-check"></i>';
+    completedButton.classList.add("completeBtn");
+    todoDiv.appendChild(completedButton);
+    
+    //trash button
+    const trashButton = document.createElement('button');
+    trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+    trashButton.classList.add("deleteBtn");
+    todoDiv.appendChild(trashButton);
+    
+    //Append to list
+    todoList.appendChild(todoDiv);    
+    /* this will append will append
+    <div class="todo">
+        <li></li>
+        <button></button>
+        <button></button>
+    </div>
+    to HTML*/
+
+    //Clear Input value
+    todoInput.value = "";
+}
+
+function deleteCheck(e){
+    const item = e.target;
+
+    //DELETE TASK
+    if(item.classList[0] === 'deleteBtn'){
+        const todo = item.parentElement;
+        //Animation
+        todo.classList.add("fall");
+        todo.addEventListener('transitionend',function(){
+            todo.remove();
+        });
+    }
+
+    //MARK DONE
+    if(item.classList[0] === 'completeBtn'){
+        const todo = item.parentElement;
+        todo.classList.toggle("completed");
+    }
+}
+
+
+//CALENDER BY ANKS
 let calendar = document.querySelector('.calendar')
 
 const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -90,3 +163,5 @@ dark_mode_toggle.onclick = () => {
     document.querySelector('body').classList.toggle('light')
     document.querySelector('body').classList.toggle('dark')
 }
+
+
