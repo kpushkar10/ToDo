@@ -477,7 +477,7 @@ form button{
 
 .calendar-days div:hover span {
     transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-}
+} 
 
 .calendar-days div span:nth-child(1),
 .calendar-days div span:nth-child(3) {
@@ -537,9 +537,9 @@ form button{
 
 .calendar-days div.curr-date,
 .calendar-days div.curr-date:hover {
-    background-color: var(--blue);
-    color: var(--white);
-    border-radius: 50%;
+    background-color: var(--light-second);
+    /* color: var(--white);
+    border-radius: 50%; */
 }
 
 .calendar-days div.curr-date span {
