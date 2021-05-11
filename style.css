@@ -338,11 +338,14 @@ form button{
     width: inherit;
     margin-top: 1px;
     margin-bottom: 1px;
-    background-color: lightblue; /*have to change*/
+    background-color: rgb(56, 57, 58); /*have to change*/
+    transition: all 1s ease;
 }
 .todo li{
     flex: 1;
-    background-color: rgb(53, 134, 161); /*have to change*/
+    font-family: 'Poppins',sans-serif;
+    color: #f3f8fe;
+    /*background-color: rgb(70, 81, 85); /*have to change*/
 
 }
 .completeBtn,
@@ -367,10 +370,10 @@ form button{
 
 .completed{
     text-decoration: line-through;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 .fall{
-    transform: translateY(8rem) /*rotateZ(20deg)*/;
+    transform: translateX(5rem) /*rotateZ(20deg)*/;
     opacity: 0;
 }
 
