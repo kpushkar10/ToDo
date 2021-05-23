@@ -8,6 +8,7 @@
     <title>To Do Application</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -16,25 +17,40 @@
         <header>
             <div class="profile">
                 <center>
-                    <img src="/Images/cam-removebg-preview - Copy.png" alt="profile-icon">
+                    <img src="./Images/cam-removebg-preview - Copy.png" alt="profile-icon">
                     <h4>Username</h4>
                 </center>
             </div>
         </header>
         <!-- Pk: changed profile view -->
+
+<!-- ----------------------------  Nandni  ------------------------------------------- -->
         <ul>
-            <li><a href="#"><i class="fas fa-qrcode"></i>DASHBOARD</a></li>
             <li><a href="#"><i class="fas fa-calendar-week"></i>Calendar</a></li>
-            <li><a href="#"><i class="fas fa-link"></i>SHORTCUT</a></li>
-            <li><a href="#"><i class="fa fa-list"></i>Lists</a></li>
-            <li><a href="#"><i class="fa fa-tags"></i>Tags</a></li>
-        </ul>
+  
+            <li><a href="#">
+                <div class="listItems">
+                  <span><i class="fa fa-list"></i>List Items </span>   
+                    <button class="button rotate" id="btn"><i class="fa fa-caret-down"></i></button>    
+                 
+                  <ul class="dropdownList" id="list">
+                   <li><div class="select">
+                       <select name = "todos" class = "filter-todo">
+                             <option value="all">All</option>
+                             <option value="completed">Complete</option>
+                             <option value="uncompleted">Uncomplete</option>
+                       </select>
+                      </div>
+                   </li>     
+                  </ul>
+                </div></a>
+            </li>
+          </ul>
 
-
+<!-- ------------------------------------------------------------------------------------ -->
     </div>
 
-    </div>
-    -->
+    
 
     <div class="box">
         <div class="card">

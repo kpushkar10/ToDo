@@ -5,6 +5,7 @@ const todoInput = document.querySelector('.taskInput');
 const todoButton = document.querySelector('.todoButton');
 const todoList = document.querySelector('.todoList');
 
+
 //Event listeners
 todoButton.addEventListener("click",addTodo);
 todoList.addEventListener("click",deleteCheck);
@@ -69,6 +70,58 @@ function deleteCheck(e){
     }
 }
 
+
+// ---Nandni >>------- (Added list items) -------------------------------
+
+var button = document.getElementById("btn");
+var list = document.getElementById("list");
+
+list.style.display = "none";
+
+button.addEventListener("click", function()
+{
+    if(list.style.display == "none"){
+        list.style.display = "block";
+    }
+    else{
+        list.style.display = "none";
+    }
+})
+
+$(".rotate").click(function () {
+    $(this).toggleClass("down");
+})
+// ----------------- SELECT OPTIONS -------------
+
+const filterOption = document.querySelector('.filter-todo');
+filterOption.addEventListener("click",filterTodo);
+
+function filterTodo(e){
+    const todos = todoList.childNodes;
+    todos.forEach(function(todo){
+        switch (e.target.value){
+            case "all":
+                todo.style.display = "flex";
+                break;
+            case "completed":
+                if (todo.classList.contains("completed")){
+                    todo.style.display = "flex";
+                }   else{
+                    todo.style.display = "none";
+                } 
+                break;
+            case "uncompleted":
+                if(!todo.classList.contains('completed')){
+                    todo.style.display = "flex";
+                }  else{
+                    todo.style.display = "none";
+                }  
+                break;
+        }
+    })
+}
+
+// -------------------------------------------------------------------<<
 
 //CALENDER BY ANKS
 let calendar = document.querySelector('.calendar')
