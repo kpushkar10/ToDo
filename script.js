@@ -5,6 +5,9 @@ const todoInput = document.querySelector('.taskInput');
 const todoButton = document.querySelector('.todoButton');
 const todoList = document.querySelector('.todoList');
 
+const signUp = document.querySelector('.signUp-Btn'); //elements from login page
+const logIn = document.querySelector('.login-Btn');
+
 //Event listeners
 todoButton.addEventListener("click",addTodo);
 todoList.addEventListener("click",deleteCheck);
@@ -67,6 +70,13 @@ function deleteCheck(e){
         const todo = item.parentElement;
         todo.classList.toggle("completed");
     }
+}
+
+//LOGIN PAGE TO HOME PAGE
+function goToHomePage(e){
+    e.preventDefault();
+    const userName = document.querySelector('.userName');
+    console.log(userName.value);
 }
 
 
