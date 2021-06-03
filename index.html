@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <div class="container">
 
     <div class="side-bar">
         <header>
@@ -26,8 +27,22 @@
 
 <!-- ----------------------------  Nandni  ------------------------------------------- -->
         <ul>
-            <li><a href="#"><i class="fas fa-calendar-week"></i>Calendar</a></li>
+            <li><button onclick="myFunction()" class="calendarBtn">
+                <a href="#" id="calendarDisplay"><i class="fas fa-calendar-week"></i>Calendar</a>
+                </button>
+            </li>
   
+       <!------------------ Theme ---------------->
+            <li><a href="#" >                  
+                    <i class="fa fa-adjust" aria-hidden="true"></i>Theme
+                    <label id="switch" class="switch">
+                            <input type="checkbox" onchange="toggleTheme()" id="slider">
+                            <span class="slider round"></span>
+                    </label>
+                </a>
+            </li>
+        <!---------------------------------------->
+
             <li><a href="#">
                 <div class="listItems">
                   <span><i class="fa fa-list"></i>List Items </span>   
@@ -45,6 +60,7 @@
                   </ul>
                 </div></a>
             </li>
+        
           </ul>
 
 <!-- ------------------------------------------------------------------------------------ -->
@@ -83,7 +99,7 @@
             </div>
     </div>
         <!-- calendar code -->
-        <div class="task-page">
+        <div   id="calendarPage" class="task-page">
             <div class="light">
                 <div class="calendar">
                     <div class="calendar-header">
@@ -118,6 +134,8 @@
     <script src="./script.js"></script>
     <p>main branch change</p>
     </div>
+
+</div>
 </body>
 
 </html>
