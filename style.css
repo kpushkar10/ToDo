@@ -221,6 +221,13 @@ img {
     background: var(--color-secondary);
     border-radius:2%;
 }
+/* .task-page{
+    margin-left:22.6%;
+    width:420px;
+    height:515px;
+    background-color:white;
+    border-radius:5%;
+} */
 .task-page .block{
     display: flex;
     flex-direction: row;
@@ -328,9 +335,9 @@ form button{
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding-left: 0.7rem;
-    width: inherit;
-    margin-top: 1px;
-    margin-bottom: 1px;
+    width: 405px;
+    margin: 2px auto;
+    border-radius: 5px;
     background-color: rgb(56, 57, 58); /*have to change*/
     transition: all 1s ease;
 }
@@ -460,14 +467,19 @@ select > option {
 
 /*           CALENDER CSS - Ankur       */
 .calendar {
-    height: 500px;
-    width: 400px;
+    height: 515px;
+    width: 420px;
     background-color: var(--bg-main);
     border-radius: 5%;
     padding: 20px;
     position: relative;
     overflow: hidden;
     /* transform: scale(1.25); */
+}
+.light{
+    height: 515px;
+    width: 420px;
+    border-radius: 2%;
 }
 
 .light .calendar {
@@ -486,6 +498,7 @@ select > option {
 
 .calendar-body {
     padding: 10px;
+    
 }
 
 .calendar-week-day {
@@ -498,7 +511,7 @@ select > option {
 .calendar-week-day div {
     display: grid;
     place-items: center;
-    color: var(--bg-second);
+    color: rgb(145, 145, 145);
 }
 
 .calendar-days {
@@ -533,7 +546,7 @@ select > option {
 .calendar-days div span:nth-child(3) {
     width: 2px;
     height: 0;
-    background-color: var(--color-txt);
+    background-color: #000;
 }
 
 .calendar-days div:hover span:nth-child(1),
@@ -555,7 +568,7 @@ select > option {
 .calendar-days div span:nth-child(4) {
     width: 0;
     height: 2px;
-    background-color: var(--color-txt);
+    background-color: #000;
 }
 
 .calendar-days div:hover span:nth-child(2),
@@ -587,7 +600,8 @@ select > option {
 
 .calendar-days div.curr-date,
 .calendar-days div.curr-date:hover {
-    background-color: var(--light-second);
+    background-color: rgb(180, 178, 178);
+    border-radius: 5px;
     /* color: var(--white);
     border-radius: 50%; */
 }
@@ -683,10 +697,11 @@ select > option {
 }
 
 .month-list.show {
-    transform: scale(1);
+    transform: scale(0.8);
     visibility: visible;
     pointer-events: visible;
     transition: all 0.2s ease-in-out;
+    background: white;
 }
 
 .month-list > div {

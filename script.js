@@ -68,6 +68,7 @@ function addTodo(event){
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
     //Create LI
+    if(todoInput.value != ""){
     const newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value;
 
@@ -95,6 +96,7 @@ function addTodo(event){
         <button></button>
     </div>
     to HTML*/
+    }
 
     //Clear Input value
     todoInput.value = "";
