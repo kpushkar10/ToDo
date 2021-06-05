@@ -209,12 +209,19 @@ img {
     margin-top: 30px;
     position: fixed;
 }
-.task-page{
+/* .task-page{
     margin-left:22.6%;
     width:420px;
     height:515px;
     background: var(--color-secondary);
     border-radius:2%;
+} */
+.task-page{
+    margin-left:22.6%;
+    width:400px;
+    height:500px;
+    background-color:white;
+    border-radius:5%;
 }
 .task-page .block{
     display: flex;
@@ -455,8 +462,8 @@ select > option {
 
 /*           CALENDER CSS - Ankur       */
 .calendar {
-    height: 500px;
-    width: 400px;
+    height: 515px;
+    width: 420px;
     background-color: var(--bg-main);
     border-radius: 5%;
     padding: 20px;
