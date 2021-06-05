@@ -355,12 +355,8 @@ form button{
 }
 .todoItem{
     padding: 0 0.5rem;
-    width: 400px;
 }
-.fa-trash{
-    pointer-events: none;
-    margin-right: 1rem;
-}
+.fa-trash,
 .fa-check{
     pointer-events: none;
 }
@@ -850,11 +846,22 @@ select > option {
   /*Scroll Bar in TodoList Ankur */
 
   #scroll {
-    background-color: transparent;
-    height: 450px;
+    
+    height: 447px;
+    margin-top: -0.01rem;
     width: inherit;
     overflow-y: scroll;
     overflow-x: hidden;
-  
+  /* ------------------------------ */
 
   }
+  #scroll::-webkit-scrollbar{
+    background-color: transparent;
+    width:8px;
+         
+    border-radius: 0 8px 0 0;
+}
+   #scroll::-webkit-scrollbar-thumb{
+    background-color: #525861;
+    border-radius: 8px 8px 8px 8px;
+} 
