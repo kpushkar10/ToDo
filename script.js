@@ -269,3 +269,46 @@ document.querySelector('#next-year').onclick = () => {
     generateCalendar(curr_month.value, curr_year.value)
 }
 
+//--------------------------------- Theme --------------------------
+
+function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.className = themeName;
+  }
+  
+  // function to toggle between light and dark theme
+  function toggleTheme() {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-light');
+        console.log("lightTheme");
+        
+    } else {
+        setTheme('theme-dark');
+        console.log("lightTheme");
+        
+    }
+  }
+  
+  // Immediately invoked function to set the theme on initial load
+  (function () {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+        document.getElementById('slider').checked = false;
+    } else {
+        setTheme('theme-light');
+      document.getElementById('slider').checked = true;
+    }
+  })();
+
+  // Nandni>>----------------  Calendar Animation -------------------
+
+calendarPage.classList.add("hide")
+
+function myFunction() {
+  var calendarPage = document.getElementById("calendarPage");
+  if (calendarPage.classList.contains("hide")) {
+      calendarPage.classList.remove("hide");
+  } else {
+      calendarPage.classList.add("hide");
+  }
+}

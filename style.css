@@ -213,13 +213,15 @@ img {
     margin-left:14%;
     margin-top: 30px;
     position: fixed;
+    border-radius: 5%;
+    background-color: transparent;
 }
 .task-page{
     margin-left:22.6%;
-    width:420px;
-    height:515px;
+    width:400px;
+    height:500px;
     background: var(--color-secondary);
-    border-radius:2%;
+    border-radius:5%;
 }
 /* .task-page{
     margin-left:22.6%;
@@ -340,6 +342,7 @@ form button{
     border-radius: 5px;
     background-color: rgb(56, 57, 58); /*have to change*/
     transition: all 1s ease;
+    border-radius: 15px;
 }
 .todo li{
     flex: 1;
@@ -465,15 +468,164 @@ select > option {
 /* ---------------------------<< Nandni ---------------------------- */
 
 
+
+
+/* Nandni>> ---------------- Calendar Animation ------------------------ */
+.side-bar ul li .calendarBtn {
+    width:100%;
+    background: none;
+    text-align: left;
+    border: none;
+
+}
+#calendarPage{
+    opacity: 1;
+    transition: all .5s ease-in-out;
+    
+ }
+#calendarPage.hide {
+    opacity: 0;
+  }
+
+  /* ----------------- THEME --------------- */
+  /* .theme{
+      display:flex;
+  } */
+  .theme-light {
+    --color-primary: #0060df;
+    --color-secondary: #fbfbfe;
+    --color-accent: #fd6f53;
+    --font-color: #000000;
+    --background-image:url(./Images/lightTheme.jpeg);
+    --border-box:1px solid rgb(235, 235, 235);
+    
+  }
+  .theme-dark {
+    --color-primary: #17ed90;
+    /* --color-secondary: #2a2c2d; */
+    --color-secondary:#161616;
+    --color-accent: #12cdea;
+    /* --font-color: #ffffff; */
+    --font-color:#fbfbfe;
+    --background-image:url(./Images/darkTheme.jpeg);
+    --border-box:1px solid black;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    background-image:var(--background-image);
+    background-position:center;
+    height:100vh; 
+     background-size: cover;
+  }
+  .container h1 {
+      font-size:25px;
+      color: var(--font-color);
+      font-family: sans-serif;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url('https://i.ibb.co/FxzBYR9/night.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  /* Rounded sliders*/ 
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  /*Scroll Bar in TodoList Ankur */
+
+  #scroll {
+    
+    height: 440px;
+    margin-top: 0.1rem;
+    width: inherit;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  /* ------------------------------ */
+
+  }
+  #scroll::-webkit-scrollbar{
+    background-color: transparent;
+    width:8px;
+         
+    border-radius: 0 8px 0 0;
+}
+   #scroll::-webkit-scrollbar-thumb{
+    background-color: #525861;
+    border-radius: 8px 8px 8px 8px;
+} 
 /*           CALENDER CSS - Ankur       */
 .calendar {
-    height: 515px;
-    width: 420px;
+    height: 500px;
+    width: inherit;
     background-color: var(--bg-main);
-    border-radius: 5%;
     padding: 20px;
     position: relative;
     overflow: hidden;
+    border-radius: 5%;
     /* transform: scale(1.25); */
 }
 .light{
@@ -639,47 +791,6 @@ select > option {
     background-color: var(--color-hover);
 }
 
-.calendar-footer {
-    padding: 10px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.toggle {
-    display: flex;
-}
-
-.toggle span {
-    margin-right: 10px;
-    color: var(--color-txt);
-}
-
-.dark-mode-switch {
-    position: relative;
-    width: 48px;
-    height: 25px;
-    border-radius: 14px;
-    background-color: var(--bg-second);
-    cursor: pointer;
-}
-
-.dark-mode-switch-ident {
-    width: 21px;
-    height: 21px;
-    border-radius: 50%;
-    background-color: var(--bg-main);
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: left 0.2s ease-in-out;
-}
-
-.dark .dark-mode-switch .dark-mode-switch-ident {
-    top: 2px;
-    left: calc(2px + 50%);
-}
-
 .month-list {
     position: absolute;
     width: 100%;
@@ -699,9 +810,9 @@ select > option {
 .month-list.show {
     transform: scale(0.8);
     visibility: visible;
-    pointer-events: visible;
-    transition: all 0.2s ease-in-out;
-    background: white;
+    pointer-events: auto;
+    transition: all 0.3s ease-in-out;
+    background :white;
 }
 
 .month-list > div {
@@ -732,151 +843,3 @@ select > option {
         opacity: 1;
     }
 }
-
-/* Nandni>> ---------------- Calendar Animation ------------------------ */
-.side-bar ul li .calendarBtn {
-    width:100%;
-    background: none;
-    text-align: left;
-    border: none;
-
-}
-#calendarPage{
-    opacity: 1;
-    transition: all .5s ease-in-out;
-    
- }
-#calendarPage.hide {
-    opacity: 0;
-  }
-
-  /* ----------------- THEME --------------- */
-  /* .theme{
-      display:flex;
-  } */
-  .theme-light {
-    --color-primary: #0060df;
-    --color-secondary: #fbfbfe;
-    --color-accent: #fd6f53;
-    --font-color: #000000;
-    --background-image:url(./Images/lightTheme.jpeg);
-    --border-box:1px solid rgb(235, 235, 235);
-    
-  }
-  .theme-dark {
-    --color-primary: #17ed90;
-    /* --color-secondary: #2a2c2d; */
-    --color-secondary:#161616;
-    --color-accent: #12cdea;
-    /* --font-color: #ffffff; */
-    --font-color:#fbfbfe;
-    --background-image:url(./Images/darkTheme.jpeg);
-    --border-box:1px solid black;
-  }
-  .container {
-    width: 100%;
-    height: 100%;
-    background-image:var(--background-image);
-    background-position:center;
-    height:100vh; 
-     background-size: cover;
-  }
-  .container h1 {
-      font-size:25px;
-      color: var(--font-color);
-      font-family: sans-serif;
-  }
-
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 40px;
-    width: 40px;
-    left: 0px;
-    bottom: 4px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    box-shadow: 0 0px 15px #2020203d;
-    background: white url('https://i.ibb.co/FxzBYR9/night.png');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196f3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196f3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(24px);
-    -ms-transform: translateX(24px);
-    transform: translateX(24px);
-    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  /* Rounded sliders*/ 
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-  /*Scroll Bar in TodoList Ankur */
-
-  #scroll {
-    
-    height: 447px;
-    margin-top: -0.01rem;
-    width: inherit;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  /* ------------------------------ */
-
-  }
-  #scroll::-webkit-scrollbar{
-    background-color: transparent;
-    width:8px;
-         
-    border-radius: 0 8px 0 0;
-}
-   #scroll::-webkit-scrollbar-thumb{
-    background-color: #525861;
-    border-radius: 8px 8px 8px 8px;
-} 
