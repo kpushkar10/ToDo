@@ -97,7 +97,7 @@ img {
     width:100%;
     line-height: 65px;
     font-size: 25px;
-    font-weight:lighter;
+    font-weight:100px;
     color: var(--font-color);
     padding-left:0;
     padding:1rem;
@@ -216,20 +216,20 @@ img {
     border-radius: 5%;
     background-color: transparent;
 }
-.task-page{
+/* .task-page{
     margin-left:22.6%;
     width:400px;
     height:500px;
     background: var(--color-secondary);
-    border-radius:3%;
-}
-/* .task-page{
+    border-radius:5%;
+}*/
+.task-page{
     margin-left:22.6%;
     width:420px;
     height:515px;
-    background-color:white;
-    border-radius:5%;
-} */
+    background: var(--color-secondary);
+    border-radius:3%; 
+} 
 .task-page .block{
     display: flex;
     flex-direction: row;
@@ -241,7 +241,8 @@ img {
     z-index: 1;
     padding: 0.7rem;
     width: inherit;
-    background: white;
+    background: var(--input-bg);
+    border-bottom-left-radius: inherit;
 }
 
 .task-page h3{
@@ -262,12 +263,14 @@ img {
     margin: 0;
     background: none;
     border: none;
-    color:inherit;
+    /* color:inherit; */
     font-size: 16px;
     font-family: inherit;
     line-height: 2;
     text-align: left;
     font-weight: lighter;
+    /* background: var(--color-secondary); */
+    
 }
 /* PK: Inserted today,someday... within division with class block*/
 
@@ -287,7 +290,8 @@ img {
     outline: none;
     font-size: 27px;
     border: none;
-    background: #fff;
+    background: var(--task-input);
+    /* background: #fff; */
     box-shadow: rgba(0, 0, 0, 0.27) 0px 1px 3px 0px, rgba(0, 0, 0, 0.23) 0px 0px 0px 1px;
 }
 
@@ -299,19 +303,23 @@ img {
     padding-left: 15px;
     font-size: 20px;
     font-weight: 400;
+    color:var(--font-color);
 }
 form button{
-    color: rgb(24, 23, 23);
-    background: #fff;
+    /* color: rgb(24, 23, 23); */
+    /* background: #fff; */
+    color:var(--font-color);
+    background: var(--task-input);
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    /* font-weight: 100px; */
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-left: 10px;
     margin-bottom: 3px;
 }
@@ -343,33 +351,40 @@ form button{
     width: 385px;
     margin: 2px 0px;
     border-radius: 5px;
-    background-color: rgb(56, 57, 58); /*have to change*/
+    background-color: var(--task-input); 
+    color:var(--font-color);
     transition: all 1s ease;
     
 }
 .todo li{
     flex: 1;
     font-family: 'Poppins',sans-serif;
-    color: #f3f8fe;
+    /* color: #f3f8fe; */
     /*background-color: rgb(70, 81, 85); /*have to change*/
 
 }
 .completeBtn,
 .deleteBtn{
-    background: #000;
-    color: white;
+     /* background:var(--deleteBtn) ; */
+    /* color: white;  */
+    background: rgb(207, 205, 205);
+    color:var(--font-color);
     border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 14px;
     border-radius: inherit;
 }
+.deleteBtn{
+    background:var(--deleteBtn) ;
+}
 .completeBtn{
-    background: rgb(73, 73, 73);
+    background:var(--completeBtn);
+    
 }
 .todoItem{
     padding: 0 0.5rem;
-    width: 350px;
+    
 }
 .fa-trash,
 .fa-check{
@@ -415,7 +430,7 @@ form button{
     margin-left: -15px;
 }
 .button{
-    width:30px;
+    width:20px;
     height:30px;
     margin-left:45px; 
     background-color: transparent;  
@@ -497,23 +512,26 @@ select > option {
       display:flex;
   } */
   .theme-light {
-    --color-primary: #0060df;
-    --color-secondary: #fbfbfe;
-    --color-accent: #fd6f53;
+    --color-secondary: #fbfbfe;    
     --font-color: #000000;
     --background-image:url(./Images/lightTheme.jpeg);
     --border-box:1px solid rgb(235, 235, 235);
-    
+    --task-input:white;
+    --input-bg:white;
+     --scroll-bar:rgb(207, 205, 205);
+    --completeBtn:rgb(235, 233, 233);     
+    --deleteBtn:rgb(207, 205, 205);
   }
   .theme-dark {
-    --color-primary: #17ed90;
-    /* --color-secondary: #2a2c2d; */
     --color-secondary:#161616;
-    --color-accent: #12cdea;
-    /* --font-color: #ffffff; */
     --font-color:#fbfbfe;
     --background-image:url(./Images/darkTheme.jpeg);
     --border-box:1px solid black;
+    --input-bg:#252525;
+    --task-input:#444;
+    --completeBtn: rgb(34, 34, 34);
+    --deleteBtn:#000;
+    --scroll-bar:#252525;
   }
   .container {
     width: 100%;
@@ -559,8 +577,8 @@ select > option {
   .slider:before {
     position: absolute;
     content: "";
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
     left: 0px;
     bottom: 4px;
     top: 0;
@@ -569,35 +587,44 @@ select > option {
     -webkit-transition: 0.4s;
     transition: 0.4s;
     box-shadow: 0 0px 15px #2020203d;
-    background: white url('https://i.ibb.co/FxzBYR9/night.png');
+    /* background: white url('https://i.ibb.co/FxzBYR9/night.png'); */
+    background-color: white;
     background-repeat: no-repeat;
     background-position: center;
   }
   
   input:checked + .slider {
-    background-color: #2196f3;
+    /* background-color: #2196f3; */
+    background-color: #e3e6e9;
   }
   
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196f3;
-  }
+  /* input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3; 
+    
+  } */
   
   input:checked + .slider:before {
     -webkit-transform: translateX(24px);
     -ms-transform: translateX(24px);
     transform: translateX(24px);
-    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+    background-color: black;
+    /* background: white url('https://i.ibb.co/7JfqXxB/sunny.png'); */
     background-repeat: no-repeat;
     background-position: center;
   }
   
   /* Rounded sliders*/ 
   .slider.round {
+    margin-top: 1.3rem;
+    margin-left:50px;
     border-radius: 34px;
+    width:50px;
+    height:25px;
   }
   
   .slider.round:before {
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    border-radius: 34px;
   }
 
   /*Scroll Bar in TodoList Ankur */
@@ -614,19 +641,19 @@ select > option {
   }
   #scroll::-webkit-scrollbar{
     background-color: transparent;
-    width:8px;
-    margin-left: -2px;
+    width:6px;
+         
     border-radius: 0 8px 0 0;
 }
    #scroll::-webkit-scrollbar-thumb{
-    background-color: #525861;
+    background-color: var(--scroll-bar); 
     border-radius: 8px 8px 8px 8px;
 } 
 /*           CALENDER CSS - Ankur       */
 .calendar {
-    height: 500px;
-    width: inherit;
-    background-color: var(--bg-main);
+    height: 515px;
+    width: 420px;
+    background-color: var(--color-secondary);
     padding: 20px;
     position: relative;
     overflow: hidden;
@@ -637,6 +664,7 @@ select > option {
     height: 500pxpx;
     width: 420px;
     border-radius: 2%;
+    background-color: var(--color-secondary);
 }
 
 .light .calendar {
@@ -649,7 +677,7 @@ select > option {
     align-items: center;
     font-size: 25px;
     font-weight: 600;
-    color: var(--color-txt);
+    color: var(--font-color);
     padding: 10px;
 }
 
@@ -675,7 +703,7 @@ select > option {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 2px;
-    color: var(--color-txt);
+    color: var(--font-color);
 }
 
 .calendar-days div {
@@ -703,7 +731,8 @@ select > option {
 .calendar-days div span:nth-child(3) {
     width: 2px;
     height: 0;
-    background-color: #000;
+    /* background-color: #000; */
+    background-color: var(--font-color);
 }
 
 .calendar-days div:hover span:nth-child(1),
@@ -725,7 +754,8 @@ select > option {
 .calendar-days div span:nth-child(4) {
     width: 0;
     height: 2px;
-    background-color: #000;
+    /* background-color: #000; */
+    background-color: var(--font-color);
 }
 
 .calendar-days div:hover span:nth-child(2),
