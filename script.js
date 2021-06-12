@@ -53,6 +53,8 @@ const todoInput = document.querySelector('.taskInput');
 const todoButton = document.querySelector('.todoButton');
 const todoList = document.querySelector('.todoList');
 
+const signUp = document.querySelector('.signUp-Btn'); //elements from login page
+const logIn = document.querySelector('.login-Btn');
 
 //Event listeners
 todoButton.addEventListener("click",addTodo);
@@ -66,6 +68,7 @@ function addTodo(event){
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
     //Create LI
+    if(todoInput.value != ""){
     const newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value;
 
@@ -93,6 +96,7 @@ function addTodo(event){
         <button></button>
     </div>
     to HTML*/
+    }
 
     //Clear Input value
     todoInput.value = "";
@@ -116,6 +120,13 @@ function deleteCheck(e){
         const todo = item.parentElement;
         todo.classList.toggle("completed");
     }
+}
+
+//LOGIN PAGE TO HOME PAGE
+function goToHomePage(e){
+    e.preventDefault();
+    const userName = document.querySelector('.userName');
+    console.log(userName.value);
 }
 
 
@@ -258,3 +269,46 @@ document.querySelector('#next-year').onclick = () => {
     generateCalendar(curr_month.value, curr_year.value)
 }
 
+//--------------------------------- Theme --------------------------
+
+function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.className = themeName;
+  }
+  
+  // function to toggle between light and dark theme
+  function toggleTheme() {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-light');
+        console.log("lightTheme");
+        
+    } else {
+        setTheme('theme-dark');
+        console.log("lightTheme");
+        
+    }
+  }
+  
+  // Immediately invoked function to set the theme on initial load
+  (function () {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+        document.getElementById('slider').checked = false;
+    } else {
+        setTheme('theme-light');
+      document.getElementById('slider').checked = true;
+    }
+  })();
+
+  // Nandni>>----------------  Calendar Animation -------------------
+
+calendarPage.classList.add("hide")
+
+function myFunction() {
+  var calendarPage = document.getElementById("calendarPage");
+  if (calendarPage.classList.contains("hide")) {
+      calendarPage.classList.remove("hide");
+  } else {
+      calendarPage.classList.add("hide");
+  }
+}

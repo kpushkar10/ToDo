@@ -30,6 +30,11 @@ CAlender - Ankur
     background-color:white;
     border-radius:5%;
 }
+
+head link{
+    height: 16px;
+    width: 16px;
+}
 /* calender */
 
 body{
@@ -92,7 +97,7 @@ img {
     width:100%;
     line-height: 65px;
     font-size: 25px;
-    font-weight:lighter;
+    font-weight:100px;
     color: var(--font-color);
     padding-left:0;
     padding:1rem;
@@ -208,21 +213,23 @@ img {
     margin-left:14%;
     margin-top: 30px;
     position: fixed;
+    border-radius: 5%;
+    background-color: transparent;
 }
 /* .task-page{
+    margin-left:22.6%;
+    width:400px;
+    height:500px;
+    background: var(--color-secondary);
+    border-radius:5%;
+}*/
+.task-page{
     margin-left:22.6%;
     width:420px;
     height:515px;
     background: var(--color-secondary);
-    border-radius:2%;
-} */
-.task-page{
-    margin-left:22.6%;
-    width:400px;
-    height:500px;
-    background-color:white;
-    border-radius:5%;
-}
+    border-radius:3%; 
+} 
 .task-page .block{
     display: flex;
     flex-direction: row;
@@ -234,6 +241,8 @@ img {
     z-index: 1;
     padding: 0.7rem;
     width: inherit;
+    background: var(--input-bg);
+    border-bottom-left-radius: inherit;
 }
 
 .task-page h3{
@@ -254,12 +263,14 @@ img {
     margin: 0;
     background: none;
     border: none;
-    color:inherit;
+    /* color:inherit; */
     font-size: 16px;
     font-family: inherit;
     line-height: 2;
     text-align: left;
     font-weight: lighter;
+    /* background: var(--color-secondary); */
+    
 }
 /* PK: Inserted today,someday... within division with class block*/
 
@@ -279,7 +290,8 @@ img {
     outline: none;
     font-size: 27px;
     border: none;
-    background: #fff;
+    background: var(--task-input);
+    /* background: #fff; */
     box-shadow: rgba(0, 0, 0, 0.27) 0px 1px 3px 0px, rgba(0, 0, 0, 0.23) 0px 0px 0px 1px;
 }
 
@@ -291,19 +303,23 @@ img {
     padding-left: 15px;
     font-size: 20px;
     font-weight: 400;
+    color:var(--font-color);
 }
 form button{
-    color: rgb(24, 23, 23);
-    background: #fff;
+    /* color: rgb(24, 23, 23); */
+    /* background: #fff; */
+    color:var(--font-color);
+    background: var(--task-input);
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    /* font-weight: 100px; */
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-left: 10px;
     margin-bottom: 3px;
 }
@@ -330,33 +346,42 @@ form button{
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding-left: 0.7rem;
-    width: inherit;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    background-color: rgb(56, 57, 58); /*have to change*/
+    width: 405px;
+    margin: 2px auto;
+    border-radius: 5px;
+    background-color: var(--task-input); 
+    color:var(--font-color);
     transition: all 1s ease;
+    border-radius: 15px;
 }
 .todo li{
     flex: 1;
     font-family: 'Poppins',sans-serif;
-    color: #f3f8fe;
+    /* color: #f3f8fe; */
     /*background-color: rgb(70, 81, 85); /*have to change*/
 
 }
 .completeBtn,
 .deleteBtn{
-    background: #000;
-    color: white;
+     /* background:var(--deleteBtn) ; */
+    /* color: white;  */
+    background: rgb(207, 205, 205);
+    color:var(--font-color);
     border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 14px;
 }
+.deleteBtn{
+    background:var(--deleteBtn) ;
+}
 .completeBtn{
-    background: rgb(34, 34, 34);
+    background:var(--completeBtn);
+    
 }
 .todoItem{
     padding: 0 0.5rem;
+    
 }
 .fa-trash,
 .fa-check{
@@ -368,7 +393,7 @@ form button{
     opacity: 0.7;
 }
 .fall{
-    transform: translateX(5rem) /*rotateZ(20deg)*/;
+    transform: translateX(1.5rem) /*rotateZ(20deg)*/;
     opacity: 0;
 }
 
@@ -402,7 +427,7 @@ form button{
     margin-left: -15px;
 }
 .button{
-    width:30px;
+    width:20px;
     height:30px;
     margin-left:45px; 
     background-color: transparent;  
@@ -460,265 +485,7 @@ select > option {
 /* ---------------------------<< Nandni ---------------------------- */
 
 
-/*           CALENDER CSS - Ankur       */
-.calendar {
-    height: 515px;
-    width: 420px;
-    background-color: var(--bg-main);
-    border-radius: 5%;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-    /* transform: scale(1.25); */
-}
 
-.light .calendar {
-    box-shadow: var(--shadow);
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 25px;
-    font-weight: 600;
-    color: var(--color-txt);
-    padding: 10px;
-}
-
-.calendar-body {
-    padding: 10px;
-}
-
-.calendar-week-day {
-    height: 50px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    font-weight: 600;
-}
-
-.calendar-week-day div {
-    display: grid;
-    place-items: center;
-    color: var(--bg-second);
-}
-
-.calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    color: var(--color-txt);
-}
-
-.calendar-days div {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    position: relative;
-    cursor: pointer;
-    animation: to-top 1s forwards;
-    /* border-radius: 50%; */
-}
-
-.calendar-days div span {
-    position: absolute;
-}
-
-.calendar-days div:hover span {
-    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-} 
-
-.calendar-days div span:nth-child(1),
-.calendar-days div span:nth-child(3) {
-    width: 2px;
-    height: 0;
-    background-color: var(--color-txt);
-}
-
-.calendar-days div:hover span:nth-child(1),
-.calendar-days div:hover span:nth-child(3) {
-    height: 100%;
-}
-
-.calendar-days div span:nth-child(1) {
-    bottom: 0;
-    left: 0;
-}
-
-.calendar-days div span:nth-child(3) {
-    top: 0;
-    right: 0;
-}
-
-.calendar-days div span:nth-child(2),
-.calendar-days div span:nth-child(4) {
-    width: 0;
-    height: 2px;
-    background-color: var(--color-txt);
-}
-
-.calendar-days div:hover span:nth-child(2),
-.calendar-days div:hover span:nth-child(4) {
-    width: 100%;
-}
-
-.calendar-days div span:nth-child(2) {
-    top: 0;
-    left: 0;
-}
-
-.calendar-days div span:nth-child(4) {
-    bottom: 0;
-    right: 0;
-}
-
-.calendar-days div:hover span:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.calendar-days div:hover span:nth-child(3) {
-    transition-delay: 0.4s;
-}
-
-.calendar-days div:hover span:nth-child(4) {
-    transition-delay: 0.6s;
-}
-
-.calendar-days div.curr-date,
-.calendar-days div.curr-date:hover {
-    background-color: var(--light-second);
-    /* color: var(--white);
-    border-radius: 50%; */
-}
-
-.calendar-days div.curr-date span {
-    display: none;
-}
-
-.month-picker {
-    padding: 5px 10px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.month-picker:hover {
-    background-color: var(--color-hover);
-}
-
-.year-picker {
-    display: flex;
-    align-items: center;
-}
-
-.year-change {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    margin: 0 10px;
-    cursor: pointer;
-}
-
-.year-change:hover {
-    background-color: var(--color-hover);
-}
-
-.calendar-footer {
-    padding: 10px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.toggle {
-    display: flex;
-}
-
-.toggle span {
-    margin-right: 10px;
-    color: var(--color-txt);
-}
-
-.dark-mode-switch {
-    position: relative;
-    width: 48px;
-    height: 25px;
-    border-radius: 14px;
-    background-color: var(--bg-second);
-    cursor: pointer;
-}
-
-.dark-mode-switch-ident {
-    width: 21px;
-    height: 21px;
-    border-radius: 50%;
-    background-color: var(--bg-main);
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: left 0.2s ease-in-out;
-}
-
-.dark .dark-mode-switch .dark-mode-switch-ident {
-    top: 2px;
-    left: calc(2px + 50%);
-}
-
-.month-list {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--bg-main);
-    padding: 20px;
-    grid-template-columns: repeat(3, auto);
-    gap: 5px;
-    display: grid;
-    transform: scale(1.5);
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.month-list.show {
-    transform: scale(1);
-    visibility: visible;
-    pointer-events: visible;
-    transition: all 0.2s ease-in-out;
-}
-
-.month-list > div {
-    display: grid;
-    place-items: center;
-}
-
-.month-list > div > div {
-    width: 100%;
-    padding: 5px 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    color: var(--color-txt);
-}
-
-.month-list > div > div:hover {
-    background-color: var(--color-hover);
-}
-
-@keyframes to-top {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 
 /* Nandni>> ---------------- Calendar Animation ------------------------ */
 .side-bar ul li .calendarBtn {
@@ -742,23 +509,26 @@ select > option {
       display:flex;
   } */
   .theme-light {
-    --color-primary: #0060df;
-    --color-secondary: #fbfbfe;
-    --color-accent: #fd6f53;
+    --color-secondary: #fbfbfe;    
     --font-color: #000000;
     --background-image:url(./Images/lightTheme.jpeg);
     --border-box:1px solid rgb(235, 235, 235);
-    
+    --task-input:white;
+    --input-bg:white;
+     --scroll-bar:rgb(207, 205, 205);
+    --completeBtn:rgb(235, 233, 233);     
+    --deleteBtn:rgb(207, 205, 205);
   }
   .theme-dark {
-    --color-primary: #17ed90;
-    /* --color-secondary: #2a2c2d; */
     --color-secondary:#161616;
-    --color-accent: #12cdea;
-    /* --font-color: #ffffff; */
     --font-color:#fbfbfe;
     --background-image:url(./Images/darkTheme.jpeg);
     --border-box:1px solid black;
+    --input-bg:#252525;
+    --task-input:#444;
+    --completeBtn: rgb(34, 34, 34);
+    --deleteBtn:#000;
+    --scroll-bar:#252525;
   }
   .container {
     width: 100%;
@@ -804,8 +574,8 @@ select > option {
   .slider:before {
     position: absolute;
     content: "";
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
     left: 0px;
     bottom: 4px;
     top: 0;
@@ -814,43 +584,52 @@ select > option {
     -webkit-transition: 0.4s;
     transition: 0.4s;
     box-shadow: 0 0px 15px #2020203d;
-    background: white url('https://i.ibb.co/FxzBYR9/night.png');
+    /* background: white url('https://i.ibb.co/FxzBYR9/night.png'); */
+    background-color: white;
     background-repeat: no-repeat;
     background-position: center;
   }
   
   input:checked + .slider {
-    background-color: #2196f3;
+    /* background-color: #2196f3; */
+    background-color: #e3e6e9;
   }
   
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196f3;
-  }
+  /* input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3; 
+    
+  } */
   
   input:checked + .slider:before {
     -webkit-transform: translateX(24px);
     -ms-transform: translateX(24px);
     transform: translateX(24px);
-    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+    background-color: black;
+    /* background: white url('https://i.ibb.co/7JfqXxB/sunny.png'); */
     background-repeat: no-repeat;
     background-position: center;
   }
   
   /* Rounded sliders*/ 
   .slider.round {
+    margin-top: 1.3rem;
+    margin-left:50px;
     border-radius: 34px;
+    width:50px;
+    height:25px;
   }
   
   .slider.round:before {
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    border-radius: 34px;
   }
 
   /*Scroll Bar in TodoList Ankur */
 
   #scroll {
     
-    height: 447px;
-    margin-top: -0.01rem;
+    height: 440px;
+    margin-top: 0.1rem;
     width: inherit;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -859,11 +638,240 @@ select > option {
   }
   #scroll::-webkit-scrollbar{
     background-color: transparent;
-    width:8px;
+    width:6px;
          
     border-radius: 0 8px 0 0;
 }
    #scroll::-webkit-scrollbar-thumb{
-    background-color: #525861;
+    background-color: var(--scroll-bar); 
     border-radius: 8px 8px 8px 8px;
 } 
+/*           CALENDER CSS - Ankur       */
+.calendar {
+    height: 515px;
+    width: 420px;
+    background-color: var(--color-secondary);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5%;
+    /* transform: scale(1.25); */
+}
+.light{
+    height: 515px;
+    width: 420px;
+    border-radius: 2%;
+    background-color: var(--color-secondary);
+}
+
+.light .calendar {
+    box-shadow: var(--shadow);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 10px;
+}
+
+.calendar-body {
+    padding: 10px;
+    
+}
+
+.calendar-week-day {
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: rgb(145, 145, 145);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: var(--font-color);
+}
+
+.calendar-days div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+    /* border-radius: 50%; */
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+.calendar-days div:hover span {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+} 
+
+.calendar-days div span:nth-child(1),
+.calendar-days div span:nth-child(3) {
+    width: 2px;
+    height: 0;
+    /* background-color: #000; */
+    background-color: var(--font-color);
+}
+
+.calendar-days div:hover span:nth-child(1),
+.calendar-days div:hover span:nth-child(3) {
+    height: 100%;
+}
+
+.calendar-days div span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4) {
+    width: 0;
+    height: 2px;
+    /* background-color: #000; */
+    background-color: var(--font-color);
+}
+
+.calendar-days div:hover span:nth-child(2),
+.calendar-days div:hover span:nth-child(4) {
+    width: 100%;
+}
+
+.calendar-days div span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+.calendar-days div:hover span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.calendar-days div:hover span:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.calendar-days div:hover span:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.calendar-days div.curr-date,
+.calendar-days div.curr-date:hover {
+    background-color: rgb(180, 178, 178);
+    border-radius: 5px;
+    /* color: var(--white);
+    border-radius: 50%; */
+}
+
+.calendar-days div.curr-date span {
+    display: none;
+}
+
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.month-picker:hover {
+    background-color: var(--color-hover);
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.year-change:hover {
+    background-color: var(--color-hover);
+}
+
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-main);
+    padding: 20px;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: auto;
+    transition: all 0.3s ease-in-out;
+    background :white;
+}
+
+.month-list > div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list > div > div {
+    width: 100%;
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-txt);
+}
+
+.month-list > div > div:hover {
+    background-color: var(--color-hover);
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
