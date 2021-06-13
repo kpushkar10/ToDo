@@ -57,6 +57,11 @@ const signUp = document.querySelector('.signUp-Btn'); //elements from login page
 const logIn = document.querySelector('.login-Btn');
 
 //Event listeners
+
+// ------------------- NANDNI -----------------------
+document.addEventListener("DOMContentLoaded",getTodos);
+// ---------------------------------------------------
+
 todoButton.addEventListener("click",addTodo);
 todoList.addEventListener("click",deleteCheck);
 
@@ -75,6 +80,11 @@ function addTodo(event){
     newTodo.classList.add("todoItem");
     todoDiv.appendChild(newTodo);
     
+    // ------------------------NANDNI---------------------
+    //Add TODO to local storage
+    saveLocalTodos(todoInput.value);
+    // ---------------------------------------------------
+
     //Check mark button
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -110,6 +120,11 @@ function deleteCheck(e){
         const todo = item.parentElement;
         //Animation
         todo.classList.add("fall");
+
+        // -------------------- NANDNI -----------------------
+        removeLocalTodos(todo);    
+        // ---------------------------------------------------
+
         todo.addEventListener('transitionend',function(){
             todo.remove();
         });
@@ -178,6 +193,90 @@ function filterTodo(e){
                 break;
         }
     })
+}
+
+// -------------------------------- Local Storage -------------------------------
+
+var list = document.querySelector('#list');
+function store() {
+    window.localStorage.myitem = list.innerHTML;
+  }
+  
+  function getValues() {
+    var storedValues = window.localStorage.myitem;
+    if(!storedValues) {
+      list.innerHTML = '<li>Make a to do list</li>'+
+                       '<li>Check off first thing on the to do list</li>'+
+                       '<li>Realize you have already accomplished 2 things in the list</li>'+
+                       '<li>Reward yourself with a nap</li>';
+    }
+    else {
+      list.innerHTML = storedValues;
+    }
+  }
+  
+
+function saveLocalTodos(todo){
+    //CHECK---heyy do I have thing in there?
+    let todos;
+    if (localStorage.getItem("todos") === null){
+        todos =[];
+    }else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+
+    todos.push(todo);
+    localStorage.setItem("todos",JSON.stringify(todos));
+}
+
+function getTodos(){
+    //CHecK---Hey do I already have thing in there?
+    let todos;
+    if (localStorage.getItem("todos") === null){
+        todos =[];
+    }else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    todos.forEach(function(todo){
+
+    //Todo Div
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+    //Create LI
+    const newTodo = document.createElement("li");
+    newTodo.innerText = todo;
+
+    newTodo.classList.add("todoItem");
+    todoDiv.appendChild(newTodo);
+    
+    //Check mark button
+    const completedButton = document.createElement('button');
+    completedButton.innerHTML = '<i class="fas fa-check"></i>';
+    completedButton.classList.add("completeBtn");
+    todoDiv.appendChild(completedButton);
+    
+    //trash button
+    const trashButton = document.createElement('button');
+    trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+    trashButton.classList.add("deleteBtn");
+    todoDiv.appendChild(trashButton);
+    
+    //Append to list
+    todoList.appendChild(todoDiv); 
+    });
+}
+
+function removeLocalTodos(todo){
+     //CHecK---Hey do I already have thing in there?
+     let todos;
+     if (localStorage.getItem("todos") === null){
+         todos =[];
+     }else {
+         todos = JSON.parse(localStorage.getItem("todos"));
+     }
+     const todoIndex = todo.children[0].innerText;
+     todos.splice(todos.indexOf(todoIndex), 1);
+     localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 // -------------------------------------------------------------------<<

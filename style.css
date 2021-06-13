@@ -37,12 +37,25 @@ head link{
 }
 /* calender */
 
+.container {
+    width: 100%;
+    height: 100%;
+    /* margin-left:100px; */
+    background-image:var(--background-image);
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: right;
+     /* background-size: cover;  */
+    height:100vh;
+    
+  }
+
 body{
     font-family:calibri;
     /* background-image:url(./Images/ToDo_1\ -\ Copy.png); */
-    background-position:center;
+    /* background-position:center;
     height:100vh;
-    background-size: cover;
+    background-size: cover; */
 }
 *{
     margin:0;
@@ -216,18 +229,13 @@ img {
     border-radius: 5%;
     background-color: transparent;
 }
-/* .task-page{
-    margin-left:22.6%;
-    width:400px;
-    height:500px;
-    background: var(--color-secondary);
-    border-radius:5%;
-}*/
+
 .task-page{
     margin-left:22.6%;
     width:420px;
     height:515px;
     background: var(--color-secondary);
+    
     border-radius:3%; 
 } 
 .task-page .block{
@@ -347,8 +355,8 @@ form button{
     align-items: center;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
-    /*padding-left: 0.7rem;*/
-    width: 385px;
+    /* padding-left: 0.7rem; */
+    width: 400px;
     margin: 2px 0px;
     border-radius: 5px;
     background-color: var(--task-input); 
@@ -374,9 +382,11 @@ form button{
     cursor: pointer;
     font-size: 14px;
     border-radius: inherit;
+    
 }
 .deleteBtn{
     background:var(--deleteBtn) ;
+    /* border-radius:0 5px 5px 0; */
 }
 .completeBtn{
     background:var(--completeBtn);
@@ -514,33 +524,36 @@ select > option {
   .theme-light {
     --color-secondary: #fbfbfe;    
     --font-color: #000000;
-    --background-image:url(./Images/lightTheme.jpeg);
+    /* --background-image:url(./Images/lightTheme.jpeg); */
+    --background-image:url(./Images/lightTheme_edit.png);
     --border-box:1px solid rgb(235, 235, 235);
     --task-input:white;
     --input-bg:white;
      --scroll-bar:rgb(207, 205, 205);
     --completeBtn:rgb(235, 233, 233);     
-    --deleteBtn:rgb(207, 205, 205);
+    --deleteBtn:rgb(182, 179, 179);
   }
   .theme-dark {
     --color-secondary:#161616;
     --font-color:#fbfbfe;
-    --background-image:url(./Images/darkTheme.jpeg);
+    /* --background-image:url(./Images/darkTheme.jpeg); */
+    --background-image:url(./Images/darkTheme_edit.png);
     --border-box:1px solid black;
     --input-bg:#252525;
     --task-input:#444;
     --completeBtn: rgb(34, 34, 34);
     --deleteBtn:#000;
     --scroll-bar:#252525;
+    
   }
-  .container {
+  /* .container {
     width: 100%;
     height: 100%;
     background-image:var(--background-image);
     background-position:center;
     height:100vh; 
-     background-size: cover;
-  }
+    background-size: cover;
+  } */
   .container h1 {
       font-size:25px;
       color: var(--font-color);
@@ -633,17 +646,19 @@ select > option {
     
     height: 440px;
     margin-top: 0.1rem;
+    margin-right: 0.5rem;
     width: inherit;
     overflow-y: scroll;
     overflow-x: hidden;
+    
   /* ------------------------------ */
 
   }
   #scroll::-webkit-scrollbar{
     background-color: transparent;
-    width:6px;
-         
+    width:5px;         
     border-radius: 0 8px 0 0;
+    
 }
    #scroll::-webkit-scrollbar-thumb{
     background-color: var(--scroll-bar); 
