@@ -406,7 +406,7 @@ form button{
     opacity: 0.7;
 }
 .fall{
-    transform: translateX(1.5rem) /*rotateZ(20deg)*/;
+    transform: translateX(3rem) /*rotateZ(20deg)*/;
     opacity: 0;
 }
 
@@ -416,11 +416,19 @@ form button{
     margin-bottom: 20px;
 }
 
-.profile center img{
+.profile center img,
+.fa-user-circle,
+.fa-camera{
     height: 100px;
     width: 100px;
     margin: 12px;
     border-radius: 100px;
+}
+.fa-user-circle,
+.fa-camera{
+    color:var(--font-color);
+    font-size: 90px;
+    font-weight: 100;
 }
 .profile center h4{
     color: var(--font-color);
